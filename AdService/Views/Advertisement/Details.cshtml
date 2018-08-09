@@ -1,0 +1,56 @@
+﻿@model Repo.Models.Advertisement
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "Advertisement details";
+}
+
+<h2>Details about advertisement number @Model.Id</h2>
+
+<div>
+    <h4>Advertisement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfAdd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.Identity.IsAuthenticated &&( User.IsInRole("Admin") || User.IsInRole("Employee") || Model.UserID ==
+        User.Identity.GetUserId()))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+    }
+   
+    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-default" })
+</p>

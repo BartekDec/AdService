@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <center><h1 style="font-size:250%;">Advertisement in Cracow</h1></center>
+    <center><img src="~/Content/logo.jpg" /></center>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Why our website?</h2>
+        <p>
+            Most powerful ad service in city. Over milion advertisements. Thousands registered users. Do not hesitate.
+            Join us.
+        </p>
+        <p><a class="btn btn-default"  href=@Url.Action("Login","Account")>Log in</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Easy to use</h2>
+        <p>Three simple steps to publish your ads. Register your account, log in and post your ads</p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>Unlimited amount</h2>
+        <p>You can post as many ads as you want</p>
+        
+    </div>
+</div>
