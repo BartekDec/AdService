@@ -34,6 +34,13 @@ namespace AdService.Controllers
             var advertisement = _repo.GetAdvertisement();
             return View(advertisement);
         }
+        public ActionResult MyAdvertisement ()
+        {
+            string userId = User.Identity.GetUserId();
+            var advertisement = _repo.GetAdvertisement();
+            advertisement = advertisement.Where(o => o.UserID == userId);
+            return View(advertisement);
+        }
 
 
         // GET: Advertisement/Details/5
@@ -75,7 +82,7 @@ namespace AdService.Controllers
                 {
                     _repo.CreateAd(advertisement);
                     _repo.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("MyAdvertisement");
 
                 }
                 catch

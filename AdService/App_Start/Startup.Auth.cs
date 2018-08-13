@@ -62,8 +62,8 @@ namespace AdService
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "hidden",
-                ClientSecret = "hidden"
+                ClientId = "253809768766-7gku72oslsoadbdb1sv6eugdcf6gma8d.apps.googleusercontent.com",
+                ClientSecret = "awrHKsXZeOEFixoFH-kWhUOp"
             });
 
         }
